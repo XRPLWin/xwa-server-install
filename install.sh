@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo 'install start'
+echo 'Starting XWA server installation...'
