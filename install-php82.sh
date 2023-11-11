@@ -53,14 +53,19 @@ ln -s /opt/php-$version /opt/php
 
 ### PHP INSTALL DONE
 
+# Copy php.ini
+cp $base/templates/php/php.ini /opt/php/etc/php.ini
+
 echo 'export PATH=$PATH:/opt/php/bin/' >> /root/.bashrc
 /opt/php/bin/pecl channel-update pecl.php.net
 
 # install redis php extension (later add redis.so to php.ini)
 echo '' | /opt/php/bin/pecl install redis
+#echo 'extension=redis.so' >> /opt/php/etc/php.ini
 
 # install swoole
 echo '' | /opt/php/bin/pecl install swoole
+#echo 'extension=swoole.so' >> /opt/php/etc/php.ini
 
 # FPM INSTALLATION SAMPLE:
 #cp $base/templates/php-fpm/php-fpm.service /etc/systemd/system/php-fpm.service
