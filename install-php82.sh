@@ -15,7 +15,7 @@ wget https://www.php.net/distributions/php-$version.tar.gz -O /root/sw/php/php-$
 tar vfx /root/sw/php/php-$version.tar.gz -C /root/sw/php
 cd /root/sw/php/php-$version
 ./buildconf --force
-./configure --prefix=/opt/php-$version \
+./configure --prefix=/opt/php-$version OPENSSL_CFLAGS=-I/opt/openssl/include/ OPENSSL_LIBS="-L/opt/openssl/lib64/ -lssl -lcrypto" \
     --enable-fpm \
     --with-config-file-path=/opt/php-$version/etc \
     --enable-cli \
@@ -27,9 +27,9 @@ cd /root/sw/php/php-$version
     --enable-ftp \
     --with-iconv \
     --enable-mbstring \
+    --without-sqlite3 \
     --with-mysqli=mysqlnd \
     --with-pdo-mysql=mysqlnd \
-    --with-pdo-pgsql=/usr/pgsql-14 \
     --enable-pcntl \
     --enable-posix \
     --enable-xmlreader \
