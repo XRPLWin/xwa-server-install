@@ -8,7 +8,8 @@ echo $version version will be installed
 #version=8.2.12
 base=/root/deploy
 
-sudo apt install -y nano wget tar make build-essential git curl gcc g++ autoconf pkg-config libxml2-dev zlib1g-dev libbz2-dev
+sudo apt install -y nano wget tar make build-essential git curl gcc g++ autoconf pkg-config libxml2-dev zlib1g-dev sqlite bzip2 libbz2-dev libcurl4-openssl-dev libssl-dev libgmp-dev
+
 sudo apt update
 mkdir -p /root/sw/php
 wget https://www.php.net/distributions/php-$version.tar.gz -O /root/sw/php/php-$version.tar.gz
@@ -20,7 +21,7 @@ cd /root/sw/php/php-$version
     --with-config-file-path=/opt/php-$version/etc \
     --enable-cli \
     --enable-sockets \
-    --with-bz2 \
+    --with-zlib \
     --enable-dom \
     --enable-exif \
     --enable-fileinfo \
@@ -34,7 +35,6 @@ cd /root/sw/php/php-$version
     --enable-posix \
     --enable-xmlreader \
     --with-xsl \
-    --with-zlib \
     --with-gmp \
     --enable-intl \
     --enable-simplexml \
@@ -45,6 +45,7 @@ cd /root/sw/php/php-$version
     --with-pear
 make && make install
 
+# removed:     --with-zlib \     --with-bz2 \
 
 
 
