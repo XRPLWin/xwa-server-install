@@ -8,7 +8,7 @@ echo $version version will be installed
 #version=8.2.12
 base=/root/deploy
 
-sudo apt install -y nano wget tar make build-essential git curl gcc g++ autoconf pkg-config
+sudo apt install -y nano wget tar make build-essential git curl gcc g++ autoconf pkg-config libxml2-dev
 sudo apt update
 mkdir -p /root/sw/php
 wget https://www.php.net/distributions/php-$version.tar.gz -O /root/sw/php/php-$version.tar.gz
