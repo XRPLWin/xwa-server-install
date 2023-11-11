@@ -29,7 +29,7 @@ cd /root/sw/php/php-$version
     --with-iconv \
     --enable-mbstring \
     --without-sqlite3 \
-    --without-pdo-sqlite3 \
+    --without-pdo-sqlite \
     --with-mysqli=mysqlnd \
     --with-pdo-mysql=mysqlnd \
     --enable-pcntl \
