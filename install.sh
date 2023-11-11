@@ -6,9 +6,11 @@ sudo apt update
 sudo apt install curl
 curl -O https://repo.percona.com/apt/percona-release_latest.generic_all.deb
 sudo apt install -y gnupg2 lsb-release ./percona-release_latest.generic_all.deb
+sudo apt update
 
-
-
+percona-release setup ps80
+sudo apt install -y percona-server-rocksdb
+# You will be asked to enter mysql root password then "Use Strong Encryption"
 
 
 
