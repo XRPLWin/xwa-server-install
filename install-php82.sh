@@ -8,7 +8,7 @@ echo $version version will be installed
 #version=8.2.12
 base=/root/deploy
 
-sudo apt install -y nano wget tar make build-essential git curl gcc g++ autoconf pkg-config libxml2-dev zlib1g-dev sqlite bzip2 libbz2-dev libcurl4-openssl-dev libssl-dev libgmp-dev
+sudo apt install -y nano wget tar make build-essential git curl gcc g++ autoconf pkg-config libxml2-dev zlib1g-dev sqlite bzip2 libbz2-dev libcurl4-openssl-dev libssl-dev libgmp-dev libonig-dev
 
 sudo apt update
 mkdir -p /root/sw/php
@@ -29,6 +29,7 @@ cd /root/sw/php/php-$version
     --with-iconv \
     --enable-mbstring \
     --without-sqlite3 \
+    --without-pdo-sqlite3 \
     --with-mysqli=mysqlnd \
     --with-pdo-mysql=mysqlnd \
     --enable-pcntl \
