@@ -1,3 +1,5 @@
+# NOT PRODUCTION READY!
+
 # xwa-server-install
 Installation scripts for XWA engine.
 
