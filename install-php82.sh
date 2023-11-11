@@ -59,6 +59,9 @@ echo 'export PATH=$PATH:/opt/php/bin/' >> /root/.bashrc
 # install redis php extension (later add redis.so to php.ini)
 echo '' | /opt/php/bin/pecl install redis
 
+# install swoole
+echo '' | /opt/php/bin/pecl install swoole
+
 # FPM INSTALLATION SAMPLE:
 #cp $base/templates/php-fpm/php-fpm.service /etc/systemd/system/php-fpm.service
 #systemctl daemon-reload
