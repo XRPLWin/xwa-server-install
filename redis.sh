@@ -22,7 +22,3 @@ sysctl vm.overcommit_memory=1
 echo "vm.overcommit_memory = 1" >> /etc/sysctl.conf
 
 systemctl restart redis
-
-# PHP-REDIS
-###########################
-#yum --enablerepo=epel -y install php-pecl-redis
