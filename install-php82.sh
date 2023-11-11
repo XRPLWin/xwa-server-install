@@ -18,6 +18,7 @@ cd /root/sw/php/php-$version
 ./buildconf --force
 ./configure --prefix=/opt/php-$version OPENSSL_CFLAGS=-I/opt/openssl/include/ OPENSSL_LIBS="-L/opt/openssl/lib64/ -lssl -lcrypto" \
     --enable-fpm \
+    --enable-bcmath \
     --with-config-file-path=/opt/php-$version/etc \
     --enable-cli \
     --enable-sockets \
@@ -44,9 +45,14 @@ cd /root/sw/php/php-$version
     --enable-soap \
     --with-openssl \
     --with-pear
-make && make install
 
 # removed:     --with-zlib \     --with-bz2 \
+
+make && make install
+ln -s /opt/php-$version /opt/php
+
+
+
 
 
 
