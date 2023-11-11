@@ -17,7 +17,7 @@ cd /root/sw/nginx/nginx-$version
 make && make install
 ln -s /opt/nginx-$version /opt/nginx
 
-# OLD BELOW
+
 cp $base/templates/nginx/nginx.service /etc/systemd/system/nginx.service
 
 cp $base/templates/nginx/nginx.conf /opt/nginx-$version/conf/nginx.conf
@@ -32,19 +32,13 @@ mkdir -p /opt/nginx-$version/logs/vhost
 chmod 0750 /opt/nginx-$version/logs/vhost
 chown root:root /opt/nginx-$version/logs/vhost
 
-ln -s /opt/nginx /var/www
+#ln -s /opt/nginx /var/www
 
 # create default site (directory)
 mkdir -p /opt/nginx-$version/htdocs/default
 cp $base/templates/nginx/default.index.html /opt/nginx-$version/htdocs/default/index.html
 chmod -R 0750 /opt/nginx-$version/htdocs/default
 chown -R root:daemon /opt/nginx-$version/htdocs/default
-
-# create example site (directory and vhost)
-mkdir -p /opt/nginx-$version/htdocs/examplesite
-chmod 0750 /opt/nginx-$version/htdocs/examplesite
-chown root:daemon /opt/nginx-$version/htdocs/examplesite
-cp $base/templates/nginx/vhostexample.conf /opt/nginx-$version/conf/vhosts/vhostexample.conf
 
 # Reload services
 systemctl daemon-reload
@@ -55,6 +49,8 @@ systemctl enable nginx.service
 # Start nginx service
 systemctl start nginx.service
 
+# Install firewall
+apt install -y firewalld
 # Configure firewall
 firewall-cmd --permanent --zone=public --add-service=http 
 firewall-cmd --permanent --zone=public --add-service=https
