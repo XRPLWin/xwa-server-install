@@ -51,97 +51,20 @@ cd /root/sw/php/php-$version
 make && make install
 ln -s /opt/php-$version /opt/php
 
-
-
-
-
-
-
-
-
-
-
-
-# OLD BELOW
-
-yum install -y epel-release
-
-yum install -y nano wget tar pcre-devel openssl-devel gcc autoconf libxml2-devel bzip2-devel curl-devel libjpeg-devel libcurl-devel libjpeg-turbo-devel libpng-devel libicu-devel libmcrypt-devel mysql libxslt-devel gcc-c++ sqlite-devel freetype freetype-devel systemd-devel oniguruma
-
-yum -y --enablerepo=powertools install oniguruma-devel
-
-# for gmp
-yum -y install gmp gmp-devel
-
-yum -y install make
-
-yum update
-
-mkdir -p /root/sw/php
-wget https://www.php.net/distributions/php-$version.tar.gz -O /root/sw/php/php-$version.tar.gz
-tar vfx /root/sw/php/php-$version.tar.gz -C /root/sw/php
-cd /root/sw/php/php-$version
-./buildconf --force
-./configure --prefix=/opt/php-$version \
-    --enable-fpm \
-    --with-config-file-path=/opt/php-$version/etc \
-    --enable-cli \
-    --enable-sockets \
-    --with-bz2 \
-    --enable-dom \
-    --enable-exif \
-    --enable-fileinfo \
-    --enable-ftp \
-    --with-iconv \
-    --enable-mbstring \
-    --with-mysqli=mysqlnd \
-    --with-pdo-mysql=mysqlnd \
-    --with-pdo-pgsql=/usr/pgsql-14 \
-    --enable-pcntl \
-    --enable-posix \
-    --enable-xmlreader \
-    --with-xsl \
-    --with-zlib \
-    --with-gmp \
-    --enable-intl \
-    --enable-simplexml \
-    --with-curl \
-    --with-libdir=lib64 \
-    --enable-soap \
-    --with-openssl \
-    --with-pear
-make && make install
-ln -s /opt/php-$version /opt/php
-######################################
-
-
-
-# copy main config file
-cp /opt/php/etc/php-fpm.conf.default /opt/php/etc/php-fpm.conf
-# copy default pool
-cp $base/templates/php-fpm/default-pool.conf /opt/php/etc/php-fpm.d/default-pool.conf
+### PHP INSTALL DONE
 
 echo 'export PATH=$PATH:/opt/php/bin/' >> /root/.bashrc
-
-cp $base/templates/php-fpm/php-fpm.service /etc/systemd/system/php-fpm.service
-
 /opt/php/bin/pecl channel-update pecl.php.net
 
-# install mongodb php extension
-# /opt/php/bin/pecl install mongodb
-
-# install redis php extension
+# install redis php extension (later add redis.so to php.ini)
 echo '' | /opt/php/bin/pecl install redis
 
-# install imagick php extension
-# echo '' | /opt/php/bin/pecl install imagick
-
-# copy php config file with redis.so extension
-cp $base/templates/php-fpm/php$version.ini /opt/php/etc/php.ini
-
-systemctl daemon-reload
-systemctl enable php-fpm
-systemctl start php-fpm
+# FPM INSTALLATION SAMPLE:
+#cp $base/templates/php-fpm/php-fpm.service /etc/systemd/system/php-fpm.service
+#systemctl daemon-reload
+#systemctl enable php-fpm
+#systemctl start php-fpm
 
 # make php command avaliable
 ln /opt/php/bin/php /usr/bin/php
+
