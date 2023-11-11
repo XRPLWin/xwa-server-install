@@ -1,6 +1,20 @@
 #!/bin/bash
 
-echo 'XWA Installer: Starting XWA server installation...'
+echo 'XWA Installer: Percona MyRocks'
+
+sudo apt update
+sudo apt install curl
+curl -O https://repo.percona.com/apt/percona-release_latest.generic_all.deb
+sudo apt install -y gnupg2 lsb-release ./percona-release_latest.generic_all.deb
+
+
+
+
+
+
+
+
+
 
 yum -y update
 yum -y install epel-release nano net-tools openssh-server which unzip tar
