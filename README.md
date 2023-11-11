@@ -4,7 +4,7 @@ Installation scripts for XWA engine.
 ## Clone this repo
 
 ```
-git clone 
+git clone https://github.com/XRPLWin/xwa-server-install.git /root/deploy
 ```
 
 ## Percona MyRocks
