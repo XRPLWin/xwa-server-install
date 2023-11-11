@@ -10,7 +10,7 @@ sudo apt update
 
 percona-release setup ps80
 sudo apt install -y percona-server-rocksdb
-# You will be asked to enter mysql root password then "Use Strong Encryption"
+# USER INPUT: You will be asked to enter mysql root password then "Use Strong Encryption"
 
 
 
