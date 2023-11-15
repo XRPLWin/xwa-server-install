@@ -24,9 +24,7 @@ ps-admin --enable-rocksdb -u root -pMyPASSWORD
 # To make RocksDB storage engine default, set default-storage-engine=rocksdb in the [mysqld] section of my.cnf and restart Percona Server.
 # Check settings with "SHOW ENGINES" command
 # Set myrocks as default engine:
-echo 'set default-storage-engine=rocksdb' >> /etc/mysql/conf.d/mysql.cnf
-
-
+echo 'default-storage-engine=rocksdb' >> /etc/mysql/conf.d/mysql.cnf
 
 systemctl restart mysql
 
