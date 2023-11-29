@@ -4,7 +4,7 @@ version=1.24.0
 
 base=/root/deploy
 
-apt install -y
+# apt install -y
 
 mkdir -p /root/sw/nginx
 # this is installed after php8 install, so they might be depencdecies that are missing that came from php installation.
