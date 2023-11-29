@@ -6,6 +6,9 @@ Installation scripts for XWA engine on Ubuntu
 ```
 git clone https://github.com/XRPLWin/xwa-server-install.git /root/deploy
 ```
+## Procedure
+
+Recommended to do it like this: myrocks, redis, php, nginx, supervisor
 
 ## Snippets
 
