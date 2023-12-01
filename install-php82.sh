@@ -29,7 +29,6 @@ cd /root/sw/php/php-$version
     --enable-ftp \
     --with-iconv \
     --enable-mbstring \
-    --without-pdo-sqlite \
     --with-mysqli=mysqlnd \
     --with-pdo-mysql=mysqlnd \
     --enable-pcntl \
