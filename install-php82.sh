@@ -31,6 +31,7 @@ cd /root/sw/php/php-$version
     --enable-mbstring \
     --with-mysqli=mysqlnd \
     --with-pdo-mysql=mysqlnd \
+    --with-pdo-pgsql=/usr/pgsql-14 \
     --enable-pcntl \
     --enable-posix \
     --enable-xmlreader \
