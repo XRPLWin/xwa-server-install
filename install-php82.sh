@@ -3,7 +3,6 @@
 #PHP
 ####################################
 version=8.2.12
-# NOTE: remove --with-pdo-pgsql=/usr/pgsql-14 if you do not use it
 ####################################
 echo $version version will be installed
 #version=8.2.12
@@ -32,7 +31,6 @@ cd /root/sw/php/php-$version
     --enable-mbstring \
     --with-mysqli=mysqlnd \
     --with-pdo-mysql=mysqlnd \
-    --with-pdo-pgsql=/usr/pgsql-14 \
     --enable-pcntl \
     --enable-posix \
     --enable-xmlreader \
@@ -46,7 +44,7 @@ cd /root/sw/php/php-$version
     --with-openssl \
     --with-pear
 
-# removed:     --with-zlib \     --with-bz2 \
+# removed:     --with-zlib \     --with-bz2 \     --with-pdo-pgsql=/usr/pgsql-14 \
 
 make && make install
 ln -s /opt/php-$version /opt/php
