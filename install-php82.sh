@@ -3,6 +3,7 @@
 #PHP
 ####################################
 version=8.2.12
+# NOTE: remove --with-pdo-pgsql=/usr/pgsql-14 if you do not use it
 ####################################
 echo $version version will be installed
 #version=8.2.12
