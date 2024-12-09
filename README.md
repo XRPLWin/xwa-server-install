@@ -13,3 +13,6 @@ Recommended to do it like this: myrocks, redis, php, nginx, supervisor
 ## Percona MyRocks
 
 https://docs.percona.com/percona-server/5.7/myrocks/install.html
+
+## Make .sh files executable
+`chmod +x my_script.sh`
