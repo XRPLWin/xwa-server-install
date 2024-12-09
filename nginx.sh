@@ -8,7 +8,7 @@ base=/root/deploy
 
 mkdir -p /root/sw/nginx
 # this is installed after php8 install, so they might be depencdecies that are missing that came from php installation.
-apt install -y libpcre3-dev make gcc g++ autoconf libcurl4-openssl-dev libssl-dev
+apt install -y libpcre3-dev make gcc g++ autoconf libcurl4-openssl-dev libssl-dev zlib1g-dev
 
 wget http://nginx.org/download/nginx-$version.tar.gz -O /root/sw/nginx/nginx-$version.tar.gz
 tar vfx /root/sw/nginx/nginx-$version.tar.gz -C /root/sw/nginx/
