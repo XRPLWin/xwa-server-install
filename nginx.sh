@@ -8,7 +8,7 @@ base=/root/deploy
 
 mkdir -p /root/sw/nginx
 # this is installed after php8 install, so they might be depencdecies that are missing that came from php installation.
-apt install -y libpcre3-dev
+apt install -y libpcre3-dev gcc
 
 wget http://nginx.org/download/nginx-$version.tar.gz -O /root/sw/nginx/nginx-$version.tar.gz
 tar vfx /root/sw/nginx/nginx-$version.tar.gz -C /root/sw/nginx/
