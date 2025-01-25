@@ -1,0 +1,13 @@
+[Unit]
+Description=PHP FastCGI process manager
+After=local-fs.target network.target nginx.service
+
+[Service]
+PIDFile=%t/fpm/php-fpm.pid
+ExecStartPre=/bin/mkdir --parents %t/fpm
+ExecStart=/opt/php/sbin/php-fpm --fpm-config /opt/php/etc/php-fpm.conf --nodaemonize
+ExecReload=/bin/kill -USR2 $MAINPID
+Type=simple
+
+[Install]
+WantedBy=multi-user.target
