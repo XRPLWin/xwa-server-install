@@ -9,7 +9,7 @@ curl -o /tmp/percona-release_latest.generic_all.deb https://repo.percona.com/apt
 apt-get install -y /tmp/percona-release_latest.generic_all.deb
 apt-get update
 
-percona-release setup ps84
+percona-release setup ps-84-lts --scheme https
 apt-get update
 
 apt-get install -y percona-server-server percona-server-client
