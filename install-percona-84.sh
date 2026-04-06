@@ -18,8 +18,8 @@ apt-get install -y percona-server-server percona-server-client
 #mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO 'user1'@'127.0.0.1' WITH GRANT OPTION;"
 #mysql -u root -e "FLUSH PRIVILEGES;"
 
-echo '[mysqld]
-default-storage-engine=innodb' > /etc/mysql/conf.d/storage-engine.cnf
+#echo '[mysqld]
+#default-storage-engine=innodb' > /etc/mysql/conf.d/storage-engine.cnf
 
 systemctl restart mysql
 systemctl enable mysql
