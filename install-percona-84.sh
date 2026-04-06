@@ -14,9 +14,9 @@ apt-get update
 
 apt-get install -y percona-server-server percona-server-client
 
-mysql -u root -e "CREATE USER 'root'@'127.0.0.1' IDENTIFIED BY 'mypass';"
-mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'127.0.0.1' WITH GRANT OPTION;"
-mysql -u root -e "FLUSH PRIVILEGES;"
+#mysql -u root -e "CREATE USER 'user1'@'127.0.0.1' IDENTIFIED BY 'mypass';"
+#mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO 'user1'@'127.0.0.1' WITH GRANT OPTION;"
+#mysql -u root -e "FLUSH PRIVILEGES;"
 
 echo '[mysqld]
 default-storage-engine=innodb' > /etc/mysql/conf.d/storage-engine.cnf
