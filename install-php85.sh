@@ -43,7 +43,8 @@ cd /root/sw/php/php-$version
     --enable-soap \
     --with-openssl \
 	--with-sodium \
-    --with-pear
+    --with-pear \
+	--with-zip
 
 # removed:     --with-zlib \     --with-bz2 \     --with-pdo-pgsql=/usr/pgsql-14 \
 
