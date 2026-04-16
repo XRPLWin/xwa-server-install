@@ -61,7 +61,7 @@ echo 'export PATH=$PATH:/opt/php/bin/' >> /root/.bashrc
 echo '' | /opt/php/bin/pecl install redis
 
 # install swoole
-# echo '' | /opt/php/bin/pecl install swoole
+echo '' | /opt/php/bin/pecl install swoole
 
 # Copy php.ini
 # cp $base/templates/php/php.ini /opt/php/etc/php.ini
