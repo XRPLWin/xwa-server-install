@@ -42,9 +42,9 @@ cd /root/sw/php/php-$version
     --with-libdir=lib64 \
     --enable-soap \
     --with-openssl \
-	--with-sodium \
+    --with-sodium \
     --with-pear \
-	--with-zip
+    --with-zip
 
 # removed:     --with-zlib \     --with-bz2 \     --with-pdo-pgsql=/usr/pgsql-14 \
 
