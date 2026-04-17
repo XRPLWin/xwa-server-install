@@ -59,10 +59,10 @@ ln -s /opt/php-$version /opt/php
 grep -qxF 'export PATH=$PATH:/opt/php/bin/' ~/.bashrc || echo 'export PATH=$PATH:/opt/php/bin/' >> ~/.bashrc
 /opt/php/bin/pecl channel-update pecl.php.net
 
-# install redis php extension (later add redis.so to php.ini)
+# install redis php extension (add extension=redis to php.ini)
 echo '' | /opt/php/bin/pecl install redis
 
-# install swoole
+# install swoole php extension (add extension=swoole to php.ini)
 echo '' | /opt/php/bin/pecl install swoole
 
 # Copy php.ini
