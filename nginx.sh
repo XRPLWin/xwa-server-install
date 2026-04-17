@@ -50,8 +50,8 @@ systemctl enable nginx.service
 systemctl start nginx.service
 
 # Install firewall
-apt install -y firewalld
+#apt install -y firewalld
 # Configure firewall
-firewall-cmd --permanent --zone=public --add-service=http
-firewall-cmd --permanent --zone=public --add-service=https
-firewall-cmd --reload
+#firewall-cmd --permanent --zone=public --add-service=http
+#firewall-cmd --permanent --zone=public --add-service=https
+#firewall-cmd --reload
