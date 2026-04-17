@@ -9,7 +9,7 @@ echo $version version will be installed
 base=/root/deploy
 
 sudo apt update
-sudo apt install -y nano wget tar zip make build-essential git curl gcc g++ autoconf pkg-config libxml2-dev zlib1g-dev sqlite3 bzip2 libbz2-dev libcurl4-openssl-dev libssl-dev libgmp-dev libonig-dev libsqlite3-dev libxslt-dev libbrotli-dev libsodium-dev
+sudo apt install -y nano wget tar zip make build-essential git curl gcc g++ autoconf pkg-config libxml2-dev zlib1g-dev sqlite3 bzip2 libbz2-dev libcurl4-openssl-dev libssl-dev libgmp-dev libonig-dev libsqlite3-dev libxslt-dev libbrotli-dev libsodium-dev libzip-dev
 
 mkdir -p /root/sw/php
 wget https://www.php.net/distributions/php-$version.tar.gz -O /root/sw/php/php-$version.tar.gz
