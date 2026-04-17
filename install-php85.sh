@@ -49,6 +49,7 @@ cd /root/sw/php/php-$version
 # removed:     --with-zlib \     --with-bz2 \     --with-pdo-pgsql=/usr/pgsql-14 \
 
 make && make install
+unlink /opt/php
 ln -s /opt/php-$version /opt/php
 
 ### PHP INSTALL DONE
@@ -76,5 +77,6 @@ echo '' | /opt/php/bin/pecl install swoole
 #systemctl enable php-fpm
 #systemctl start php-fpm
 
+unlink /usr/bin/php
 # make php command avaliable
 ln /opt/php/bin/php /usr/bin/php
