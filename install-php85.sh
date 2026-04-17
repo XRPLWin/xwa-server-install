@@ -56,7 +56,7 @@ ln -s /opt/php-$version /opt/php
 
 
 
-echo 'export PATH=$PATH:/opt/php/bin/' >> /root/.bashrc
+grep -qxF 'export PATH=$PATH:/opt/php/bin/' ~/.bashrc || echo 'export PATH=$PATH:/opt/php/bin/' >> ~/.bashrc
 /opt/php/bin/pecl channel-update pecl.php.net
 
 # install redis php extension (later add redis.so to php.ini)
