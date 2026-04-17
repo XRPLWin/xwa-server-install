@@ -66,6 +66,7 @@ echo '' | /opt/php/bin/pecl install redis
 echo '' | /opt/php/bin/pecl install swoole
 
 # Copy php.ini
+cp php.ini-production /opt/php/etc/php.ini
 # cp $base/templates/php/php.ini /opt/php/etc/php.ini
 
 #echo 'extension=redis.so' >> /opt/php/etc/php.ini
