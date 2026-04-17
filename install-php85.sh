@@ -2,7 +2,7 @@
 
 #PHP
 ####################################
-version=8.5.4
+version=8.5.5
 ####################################
 echo $version version will be installed
 
